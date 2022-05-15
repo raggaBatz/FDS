@@ -18,8 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('generation_id')->nullable();
             $table->unsignedBigInteger('constellation_id')->nullable();
             $table->unsignedBigInteger('group_id')->nullable();
-            $table->string('pseudonym');
-            $table->string('pseudonym_plain');
+            $table->string('pseudonym')->nullable();
+            $table->string('pseudonym_plain')->nullable();
             $table->string('names');
             $table->string('last_names');
             $table->integer('phone');
@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('contact_name');
             $table->integer('contact_phone');
-            $table->char('status');
+            $table->boolean('status')->nullable();
             $table->timestamps();
         });
     }

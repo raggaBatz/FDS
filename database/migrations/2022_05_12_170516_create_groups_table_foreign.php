@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::table('groups', function (Blueprint $table) {
             $table->foreign('grouptype_id')->references('id')->on('grouptypes');
-            $table->foreign('manager_id')->references('id')->on('volunteers');
-            $table->foreign('submanager_id')->nullable()->references('id')->on('volunteers');
+            // $table->foreign('manager_id')->nullable()->references('id')->on('volunteers');
+            // $table->foreign('submanager_id')->nullable()->references('id')->on('volunteers');
         });
     }
 

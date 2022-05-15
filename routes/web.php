@@ -24,6 +24,10 @@ Route::resource('generations', App\Http\Controllers\GenerationController::class)
 Route::resource('constellations', App\Http\Controllers\ConstellationController::class)->middleware('auth');
 Route::resource('centertypes', App\Http\Controllers\CentertypeController::class)->middleware('auth');
 Route::resource('centers', App\Http\Controllers\CenterController::class)->middleware('auth');
+Route::resource('users', App\Http\Controllers\UserController::class)->middleware('auth');
+Route::resource('volunteers', App\Http\Controllers\VolunteerController::class)->middleware('auth');
+Route::resource('grouptypes', App\Http\Controllers\GrouptypeController::class)->middleware('auth');
+Route::resource('groups', App\Http\Controllers\GroupController::class)->middleware('auth');
 
 Auth::routes();
 

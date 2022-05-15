@@ -27,8 +27,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property Constellation $constellation
  * @property Generation $generation
  * @property Group $group
- * @property Group[] $groups
- * @property Group[] $groups
  * @property Interventiondetail[] $interventiondetails
  * @property User[] $users
  * @package App
@@ -82,22 +80,6 @@ class Volunteer extends Model
     public function group()
     {
         return $this->hasOne('App\Models\Group', 'id', 'group_id');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function groups()
-    {
-        return $this->hasMany('App\Models\Group', 'manager_id', 'id');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function groups()
-    {
-        return $this->hasMany('App\Models\Group', 'submanager_id', 'id');
     }
     
     /**

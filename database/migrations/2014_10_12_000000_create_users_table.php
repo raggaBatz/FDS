@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('volunteer_id')->nullable();
             $table->string('name');
-            $table->integer('level');
+            $table->integer('level')->default(1);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

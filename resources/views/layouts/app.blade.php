@@ -10,17 +10,39 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+    $(function () {
+        $( "#birthday" ).datepicker({
+            todayHighlight: true,
+            autoclose: true,
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-100:+0",
+            dateFormat:"yy-mm-dd"
+        });
+    });
+    </script>
 </head>
 <body>
     <div id="app">
@@ -50,10 +72,16 @@
                                 <a class="nav-link" href="{{ route('centers.index') }}">{{ __('Centros') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('generations.index') }}">{{ __('Generaciones') }}</a>
+                                <a class="nav-link" href="{{ route('users.index') }}">{{ __('Usuarios') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('generations.index') }}">{{ __('Generaciones') }}</a>
+                                <a class="nav-link" href="{{ route('volunteers.index') }}">{{ __('Voluntarios') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('grouptypes.index') }}">{{ __('Tipos de grupo') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('groups.index') }}">{{ __('Grupos') }}</a>
                             </li>
                         @endif
                     </ul>

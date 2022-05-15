@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Volunteer;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 /**
  * Class VolunteerController
  * @package App\Http\Controllers
@@ -32,7 +32,11 @@ class VolunteerController extends Controller
     public function create()
     {
         $volunteer = new Volunteer();
-        return view('volunteer.create', compact('volunteer'));
+        $generations = DB::table('generations')->pluck('name', 'id');
+        $constellations = DB::table('constellations')->pluck('name', 'id');
+        $groups = DB::table('groups')->pluck('name', 'id');
+        return view('volunteer.create', ['volunteer' => $volunteer,'generations' => $generations,'constellations' => $constellations,'groups' => $groups]);
+        // return view('volunteer.create', compact('volunteer'));
     }
 
     /**
@@ -44,6 +48,16 @@ class VolunteerController extends Controller
     public function store(Request $request)
     {
         request()->validate(Volunteer::$rules);
+
+        if ($request->status == 'on') {
+            $request->merge([
+                'status' => true,
+            ]);
+        }else{
+            $request->merge([
+                'status' => false,
+            ]);
+        }
 
         $volunteer = Volunteer::create($request->all());
 
