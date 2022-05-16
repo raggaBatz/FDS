@@ -13,12 +13,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Volunteer') }}
+                                <h1>Voluntarios</h1>
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('volunteers.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear nuevo') }}
                                 </a>
                               </div>
                         </div>
@@ -34,15 +34,15 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        {{-- <th>No</th> --}}
+                                        <th>ID</th>
 
-										<th>Generation Id</th>
-										<th>Constellation Id</th>
-										<th>Group Id</th>
-										<th>Pseudonym</th>
+										<th>Generacion</th>
+										<th>Constelacion</th>
+										<th>Grupo</th>
+										<th>Pseudonimo</th>
 										{{-- <th>Pseudonym Plain</th> --}}
-										<th>Names</th>
-										<th>Last Names</th>
+										<th>Nombres</th>
+										<th>Apellidos</th>
 										{{-- <th>Phone</th>
 										<th>Birthday</th>
 										<th>Email</th> --}}
@@ -57,10 +57,10 @@
                                     @foreach ($volunteers as $volunteer)
                                         <tr>
                                             {{-- <td>{{ ++$i }}</td> --}}
-
-											<td>{{ $volunteer->generation_id }}</td>
-											<td>{{ $volunteer->constellation_id }}</td>
-											<td>{{ $volunteer->group_id }}</td>
+                                            <td>{{ $volunteer->id }}</td>
+											<td>{{ $volunteer->generation->name }}</td>
+											<td>{{ $volunteer->constellation->name }}</td>
+											<td>{{ $volunteer->group->name }}</td>
 											<td>{{ $volunteer->pseudonym }}</td>
 											{{-- <td>{{ $volunteer->pseudonym_plain }}</td> --}}
 											<td>{{ $volunteer->names }}</td>
@@ -74,11 +74,11 @@
 
                                             <td>
                                                 <form action="{{ route('volunteers.destroy',$volunteer->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('volunteers.show',$volunteer->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('volunteers.edit',$volunteer->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('volunteers.show',$volunteer->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('volunteers.edit',$volunteer->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>
                                                 </form>
                                             </td>
                                         </tr>

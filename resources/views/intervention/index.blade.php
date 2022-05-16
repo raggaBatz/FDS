@@ -13,13 +13,15 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Intervention') }}
+                                <h1>Intervenciones</h1>
                             </span>
 
                              <div class="float-right">
+                                @if (Auth::user()->level > 1)
                                 <a href="{{ route('interventions.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear nueva') }}
                                 </a>
+                                @endif
                               </div>
                         </div>
                     </div>
@@ -35,11 +37,11 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Center Id</th>
-										<th>Group Id</th>
-										<th>Intervention Date</th>
-										<th>Tools</th>
+
+										<th>Centro</th>
+										<th>Grupo</th>
+										<th>Fecha</th>
+										<th>Herramientas</th>
 
                                         <th></th>
                                     </tr>
@@ -48,19 +50,21 @@
                                     @foreach ($interventions as $intervention)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $intervention->center_id }}</td>
-											<td>{{ $intervention->group_id }}</td>
+
+											<td>{{ $intervention->center->name }}</td>
+											<td>{{ $intervention->group->name }}</td>
 											<td>{{ $intervention->intervention_date }}</td>
 											<td>{{ $intervention->tools }}</td>
 
                                             <td>
                                                 <form action="{{ route('interventions.destroy',$intervention->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('interventions.show',$intervention->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('interventions.edit',$intervention->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('interventions.show',$intervention->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
+                                                    @if (Auth::user()->level > 1)
+                                                    <a class="btn btn-sm btn-success" href="{{ route('interventions.edit',$intervention->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>
+                                                    @endif
                                                 </form>
                                             </td>
                                         </tr>

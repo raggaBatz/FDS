@@ -14,12 +14,12 @@
                             <span class="card-title">Show Volunteer</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('volunteers.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('volunteers.index') }}"> Regresar</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
+
                         <div class="form-group">
                             <strong>Generation Id:</strong>
                             {{ $volunteer->generation_id }}

@@ -14,14 +14,14 @@
                             <span class="card-title">Show Constellation</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('constellations.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('constellations.index') }}"> Regresar</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
+
                         <div class="form-group">
-                            <strong>Name:</strong>
+                            <strong>Nombre:</strong>
                             {{ $constellation->name }}
                         </div>
                         <div class="form-group">

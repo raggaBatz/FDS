@@ -33,7 +33,7 @@
 
     <script type="text/javascript">
     $(function () {
-        $( "#birthday" ).datepicker({
+        $( ".datepicker" ).datepicker({
             todayHighlight: true,
             autoclose: true,
             changeMonth: true,
@@ -60,29 +60,38 @@
                     <ul class="navbar-nav me-auto">
                         @if (Auth::check())
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('generations.index') }}">{{ __('Generaciones') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('constellations.index') }}">{{ __('Constelaciones') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('centertypes.index') }}">{{ __('Tipos de centro') }}</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('centers.index') }}">{{ __('Centros') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('users.index') }}">{{ __('Usuarios') }}</a>
+                                <a class="nav-link" href="{{ route('interventions.index') }}">{{ __('Intervenciones') }}</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('volunteers.index') }}">{{ __('Voluntarios') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('grouptypes.index') }}">{{ __('Tipos de grupo') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('groups.index') }}">{{ __('Grupos') }}</a>
-                            </li>
+                            @if (Auth::user()->level > 2)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('generations.index') }}">{{ __('Generaciones') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('constellations.index') }}">{{ __('Constelaciones') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('groups.index') }}">{{ __('Grupos') }}</a>
+                                </li>
+                            @endif
+                            @if (Auth::user()->level > 3)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('volunteers.index') }}">{{ __('Voluntarios') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('users.index') }}">{{ __('Usuarios') }}</a>
+                                </li>
+                            @endif
+                            @if (Auth::user()->level > 4)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('centertypes.index') }}">{{ __('Tipos de centro') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('grouptypes.index') }}">{{ __('Tipos de grupo') }}</a>
+                                </li>
+                            @endif
                         @endif
                     </ul>
 
@@ -92,13 +101,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                                 </li>
                             @endif
                         @else

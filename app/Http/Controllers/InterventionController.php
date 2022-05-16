@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Intervention;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class InterventionController
@@ -32,7 +33,10 @@ class InterventionController extends Controller
     public function create()
     {
         $intervention = new Intervention();
-        return view('intervention.create', compact('intervention'));
+        $centers = DB::table('centers')->pluck('name', 'id');
+        $groups = DB::table('groups')->pluck('name', 'id');
+        // return view('intervention.create', compact('intervention'));
+        return view('intervention.create', ['intervention' => $intervention, 'centers' => $centers, 'groups' => $groups]);
     }
 
     /**
@@ -73,8 +77,10 @@ class InterventionController extends Controller
     public function edit($id)
     {
         $intervention = Intervention::find($id);
-
-        return view('intervention.edit', compact('intervention'));
+        $centers = DB::table('centers')->pluck('name', 'id');
+        $groups = DB::table('groups')->pluck('name', 'id');
+        return view('intervention.edit', ['intervention' => $intervention, 'centers' => $centers, 'groups' => $groups]);
+        // return view('intervention.edit', compact('intervention'));
     }
 
     /**

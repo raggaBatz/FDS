@@ -11,27 +11,31 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Group</span>
+                            <span class="card-title"><h3>Información de grupo</h3></span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('groups.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('groups.index') }}"> Regresar</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
+
                         <div class="form-group">
-                            <strong>Grouptype Id:</strong>
-                            {{ $group->grouptype_id }}
+                            <strong>Tipo de grupo:</strong>
+                            {{ $group->grouptype->name }}
                         </div>
                         <div class="form-group">
-                            <strong>Manager Id:</strong>
+                            <strong>ID Encargado</strong>
                             {{ $group->manager_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Submanager Id:</strong>
-                            {{ $group->submanager_id }}
+                            <strong>Encargado</strong>
+                            {{ $manager->pseudonym }} - {{ $manager->last_names }}, {{ $manager->names }}
                         </div>
+                        {{-- <div class="form-group">
+                            <strong>Sub Encargado</strong>
+                            {{ $group->submanager_id }}
+                        </div> --}}
                         <div class="form-group">
                             <strong>Name:</strong>
                             {{ $group->name }}

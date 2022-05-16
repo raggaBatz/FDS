@@ -14,14 +14,14 @@
                             <span class="card-title">Show Centertype</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('centertypes.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('centertypes.index') }}"> Regresar</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
+
                         <div class="form-group">
-                            <strong>Name:</strong>
+                            <strong>Nombre:</strong>
                             {{ $centertype->name }}
                         </div>
 

@@ -2,14 +2,14 @@
     <div class="box-body">
 
         <div class="form-group">
-            {{ Form::label('name') }}
-            {{ Form::text('name', $centertype->name, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'placeholder' => 'Name']) }}
+            {{ Form::label('Nombre') }}
+            {{ Form::text('name', $centertype->name, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
             {!! $errors->first('name', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
     </div>
     <br/>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Aceptar</button>
     </div>
 </div>

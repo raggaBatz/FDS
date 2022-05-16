@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Generation</span>
+                        <span class="card-title"><h3>Actualizar generacion</h3></span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('generations.update', $generation->id) }}"  role="form" enctype="multipart/form-data">

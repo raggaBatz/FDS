@@ -14,12 +14,12 @@
                             <span class="card-title">Show Intervention</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('interventions.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('interventions.index') }}"> Regresar</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
+
                         <div class="form-group">
                             <strong>Center Id:</strong>
                             {{ $intervention->center_id }}

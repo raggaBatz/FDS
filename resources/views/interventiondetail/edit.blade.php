@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Update Volunteer
+    Update Interventiondetail
 @endsection
 
 @section('content')
@@ -13,14 +13,14 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title"><h3>Editar voluntario</h3></span>
+                        <span class="card-title">Update Interventiondetail</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('volunteers.update', $volunteer->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('interventiondetails.update', $interventiondetail->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 
-                            @include('volunteer.form')
+                            @include('interventiondetail.form')
 
                         </form>
                     </div>

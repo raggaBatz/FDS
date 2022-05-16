@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Group;
+use App\Models\Volunteer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 /**
@@ -61,8 +62,10 @@ class GroupController extends Controller
     public function show($id)
     {
         $group = Group::find($id);
-
-        return view('group.show', compact('group'));
+        $volunteer = Volunteer::where("id", $group->manager_id)->first();
+        $volunteer->refresh();
+        return view('group.show', ['group' => $group, 'manager' => $volunteer]);
+        // return view('group.show', compact('group'));
     }
 
     /**

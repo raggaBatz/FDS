@@ -87,8 +87,11 @@ class VolunteerController extends Controller
     public function edit($id)
     {
         $volunteer = Volunteer::find($id);
-
-        return view('volunteer.edit', compact('volunteer'));
+        $generations = DB::table('generations')->pluck('name', 'id');
+        $constellations = DB::table('constellations')->pluck('name', 'id');
+        $groups = DB::table('groups')->pluck('name', 'id');
+        return view('volunteer.edit', ['volunteer' => $volunteer,'generations' => $generations,'constellations' => $constellations,'groups' => $groups]);
+        // return view('volunteer.edit', compact('volunteer'));
     }
 
     /**

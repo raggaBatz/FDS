@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Center</span>
+                        <span class="card-title"><h3>Crear centro</h3></span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('centers.store') }}"  role="form" enctype="multipart/form-data">

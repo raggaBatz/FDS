@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Intervention</span>
+                        <span class="card-title"><h3>Modificar intervención</h3></span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('interventions.update', $intervention->id) }}"  role="form" enctype="multipart/form-data">

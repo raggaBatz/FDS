@@ -28,6 +28,7 @@ Route::resource('users', App\Http\Controllers\UserController::class)->middleware
 Route::resource('volunteers', App\Http\Controllers\VolunteerController::class)->middleware('auth');
 Route::resource('grouptypes', App\Http\Controllers\GrouptypeController::class)->middleware('auth');
 Route::resource('groups', App\Http\Controllers\GroupController::class)->middleware('auth');
+Route::resource('interventions', App\Http\Controllers\InterventionController::class)->middleware('auth');
 
 Auth::routes();
 

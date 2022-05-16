@@ -11,21 +11,21 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Generation</span>
+                            <span class="card-title"><h3>Mostrar</h3></span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('generations.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('generations.index') }}"> Regresar</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
+
                         <div class="form-group">
-                            <strong>Name:</strong>
+                            <strong>Nombre:</strong>
                             {{ $generation->name }}
                         </div>
                         <div class="form-group">
-                            <strong>Description:</strong>
+                            <strong>Descripcion:</strong>
                             {{ $generation->description }}
                         </div>
 

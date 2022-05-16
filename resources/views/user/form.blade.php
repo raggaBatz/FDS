@@ -1,20 +1,20 @@
 <div class="box box-info padding-1">
     <div class="box-body">
-        
-        <div class="form-group">
-            {{ Form::label('volunteer_id') }}
-            {{ Form::text('volunteer_id', $user->volunteer_id, ['class' => 'form-control' . ($errors->has('volunteer_id') ? ' is-invalid' : ''), 'placeholder' => 'Volunteer Id']) }}
+
+        {{-- <div class="form-group">
+            {{ Form::label('ID Voluntario') }}
+            {{ Form::text('volunteer_id', $user->volunteer_id, ['class' => 'form-control' . ($errors->has('ID voluntario') ? ' is-invalid' : ''), 'placeholder' => 'ID Voluntario']) }}
             {!! $errors->first('volunteer_id', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
+        </div> --}}
         <div class="form-group">
-            {{ Form::label('name') }}
-            {{ Form::text('name', $user->name, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'placeholder' => 'Name']) }}
+            {{ Form::label('Nombre') }}
+            {{ Form::text('name', $user->name, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
             {!! $errors->first('name', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('nivel') }}
-            {{ Form::text('nivel', $user->nivel, ['class' => 'form-control' . ($errors->has('nivel') ? ' is-invalid' : ''), 'placeholder' => 'Nivel']) }}
-            {!! $errors->first('nivel', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('Nivel') }}
+            {{ Form::text('level', $user->level, ['class' => 'form-control' . ($errors->has('level') ? ' is-invalid' : ''), 'placeholder' => 'Nivel']) }}
+            {!! $errors->first('level', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('email') }}
@@ -23,7 +23,8 @@
         </div>
 
     </div>
+    <br/>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Aceptar</button>
     </div>
 </div>

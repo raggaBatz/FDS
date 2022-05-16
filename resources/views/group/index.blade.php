@@ -18,7 +18,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('groups.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear nuevo') }}
                                 </a>
                               </div>
                         </div>
@@ -35,11 +35,11 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Grouptype Id</th>
-										<th>Manager Id</th>
-										<th>Submanager Id</th>
-										<th>Name</th>
+
+										<th>Tipo de grupo</th>
+										{{-- <th>Manager Id</th>
+										<th>Submanager Id</th> --}}
+										<th>Nombre</th>
 
                                         <th></th>
                                     </tr>
@@ -48,19 +48,19 @@
                                     @foreach ($groups as $group)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $group->grouptype_id }}</td>
-											<td>{{ $group->manager_id }}</td>
-											<td>{{ $group->submanager_id }}</td>
+
+											<td>{{ $group->grouptype->name }}</td>
+											{{-- <td>{{ $group->manager_id->name }}</td>
+											<td>{{ $group->submanager_id }}</td> --}}
 											<td>{{ $group->name }}</td>
 
                                             <td>
                                                 <form action="{{ route('groups.destroy',$group->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('groups.show',$group->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('groups.edit',$group->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('groups.show',$group->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('groups.edit',$group->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>
                                                 </form>
                                             </td>
                                         </tr>
