@@ -12,9 +12,10 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                            <span id="card_title">
+                            {{-- <span id="card_title">
                                 {{ __('Group') }}
-                            </span>
+                            </span> --}}
+                            <h3>Grupos</h3>
 
                              <div class="float-right">
                                 <a href="{{ route('groups.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
@@ -52,6 +53,7 @@
 											<td>{{ $group->grouptype->name }}</td>
 											{{-- <td>{{ $group->manager_id->name }}</td>
 											<td>{{ $group->submanager_id }}</td> --}}
+                                            {{-- <td>{{ $manager->pseudonym }} - {{ $manager->last_names }}, {{ $manager->names }}</td> --}}
 											<td>{{ $group->name }}</td>
 
                                             <td>

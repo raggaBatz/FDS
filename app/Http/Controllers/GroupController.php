@@ -20,8 +20,10 @@ class GroupController extends Controller
     public function index()
     {
         $groups = Group::paginate();
-
+        // $volunteer = Volunteer::where("id", $groups->manager_id)->first();
+        // $volunteer->refresh();
         return view('group.index', compact('groups'))
+        // return view('group.index', ['groups' => $groups, 'manager' => $volunteer])
             ->with('i', (request()->input('page', 1) - 1) * $groups->perPage());
     }
 

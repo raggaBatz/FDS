@@ -48,7 +48,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-black shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -58,39 +58,43 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        @if (Auth::check())
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('centers.index') }}">{{ __('Centros') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('interventions.index') }}">{{ __('Intervenciones') }}</a>
-                            </li>
-                            @if (Auth::user()->level > 2)
+                        @if(request()->route()->getName() == 'home')
+                        {{-- <h1> Text for home page </h1> --}}
+                        @else
+                            @if (Auth::check())
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('generations.index') }}">{{ __('Generaciones') }}</a>
+                                    <a class="nav-link" href="{{ route('centers.index') }}">{{ __('Centros') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('constellations.index') }}">{{ __('Constelaciones') }}</a>
+                                    <a class="nav-link" href="{{ route('interventions.index') }}">{{ __('Intervenciones') }}</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('groups.index') }}">{{ __('Grupos') }}</a>
-                                </li>
-                            @endif
-                            @if (Auth::user()->level > 3)
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('volunteers.index') }}">{{ __('Voluntarios') }}</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('users.index') }}">{{ __('Usuarios') }}</a>
-                                </li>
-                            @endif
-                            @if (Auth::user()->level > 4)
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('centertypes.index') }}">{{ __('Tipos de centro') }}</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('grouptypes.index') }}">{{ __('Tipos de grupo') }}</a>
-                                </li>
+                                @if (Auth::user()->level > 2)
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('generations.index') }}">{{ __('Generaciones') }}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('constellations.index') }}">{{ __('Constelaciones') }}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('groups.index') }}">{{ __('Grupos') }}</a>
+                                    </li>
+                                @endif
+                                @if (Auth::user()->level > 3)
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('volunteers.index') }}">{{ __('Voluntarios') }}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('users.index') }}">{{ __('Usuarios') }}</a>
+                                    </li>
+                                @endif
+                                @if (Auth::user()->level > 4)
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('centertypes.index') }}">{{ __('Tipos de centro') }}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('grouptypes.index') }}">{{ __('Tipos de grupo') }}</a>
+                                    </li>
+                                @endif
                             @endif
                         @endif
                     </ul>
@@ -99,17 +103,23 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
-                                </li>
+
+                            @if(request()->route()->getName() == 'register')
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
+                                    </li>
+                                @endif
+                            @else
+                                @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+                                    </li>
+                                @endif
+
                             @endif
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
-                                </li>
-                            @endif
+
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
