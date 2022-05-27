@@ -30,6 +30,8 @@ Route::resource('grouptypes', App\Http\Controllers\GrouptypeController::class)->
 Route::resource('groups', App\Http\Controllers\GroupController::class)->middleware('auth');
 Route::resource('interventions', App\Http\Controllers\InterventionController::class)->middleware('auth');
 
+Route::get('/pdf1', [App\Http\Controllers\ReportController::class, 'generar1'])->name('pdf1')->middleware('auth');
+
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

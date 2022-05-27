@@ -13,6 +13,22 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
+                                <h1>Reportes</h1>
+                            </span>
+
+                             <div class="float-right">
+                                @if (Auth::user()->level > 1)
+                                <a href="{{ route('pdf1') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                  {{ __('Crear') }}
+                                </a>
+                                @endif
+                              </div>
+                        </div>
+                    </div>
+                    <div class="card-header">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+
+                            <span id="card_title">
                                 <h1>Intervenciones</h1>
                             </span>
 
