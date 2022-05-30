@@ -39,6 +39,7 @@
 										<th>Generacion</th>
 										<th>Constelacion</th>
 										<th>Grupo</th>
+                                        <th>Tipo de grupo</th>
 										<th>Pseudonimo</th>
 										{{-- <th>Pseudonym Plain</th> --}}
 										<th>Nombres</th>
@@ -61,6 +62,7 @@
 											<td>{{ $volunteer->generation->name }}</td>
 											<td>{{ $volunteer->constellation->name }}</td>
 											<td>{{ $volunteer->group->name }}</td>
+                                            <td>{{ $volunteer->group->grouptype->name }}</td>
 											<td>{{ $volunteer->pseudonym }}</td>
 											{{-- <td>{{ $volunteer->pseudonym_plain }}</td> --}}
 											<td>{{ $volunteer->names }}</td>

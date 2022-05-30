@@ -53,7 +53,9 @@
                                     <a class="nav-link" href="{{ route('grouptypes.index') }}">{{ __('Tipos de grupo') }}</a>
                                 </li>
                             @endif
-
+                            <li class="list-group-item list-group-item-secondary">
+                                <a class="nav-link" href="{{ url('/warehouse') }}">{{ __('Reporteria') }}</a>
+                            </li>
                         </ul>
                     @endif
 

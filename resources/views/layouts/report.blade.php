@@ -27,22 +27,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
-    {{-- <script type="text/javascript">
-    $(function () {
-        $( ".datepicker" ).datepicker({
-            todayHighlight: true,
-            autoclose: true,
-            changeMonth: true,
-            changeYear: true,
-            yearRange: "-100:+0",
-            dateFormat:"yy-mm-dd"
-        });
-    });
-    </script> --}}
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse : collapse;
+            width: 100%;
+        }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #333;
+            color: white;
+            /* font-size: 0.875rem; */
+            text-transform: uppercase;
+            letter-spacing: 2%;
+        }
+        tr:nth- child (even) {
+            background- color : #dddddd;
+        }
+    </style>
 </head>
 <body>
     <div id="app">

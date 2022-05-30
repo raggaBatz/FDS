@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Group extends Model
 {
-    
+
     static $rules = [
 		'name' => 'required',
     ];
@@ -45,7 +45,7 @@ class Group extends Model
     {
         return $this->hasOne('App\Models\Grouptype', 'id', 'grouptype_id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -53,7 +53,7 @@ class Group extends Model
     {
         return $this->hasMany('App\Models\Intervention', 'group_id', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -61,6 +61,6 @@ class Group extends Model
     {
         return $this->hasMany('App\Models\Volunteer', 'group_id', 'id');
     }
-    
+
 
 }

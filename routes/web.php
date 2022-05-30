@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
+Route::get('/warehouse', [App\Http\Controllers\WarehouseController::class, 'index'])->name('warehouse')->middleware('auth');
 Route::resource('generations', App\Http\Controllers\GenerationController::class)->middleware('auth');
 Route::resource('constellations', App\Http\Controllers\ConstellationController::class)->middleware('auth');
 Route::resource('centertypes', App\Http\Controllers\CentertypeController::class)->middleware('auth');
@@ -31,6 +32,8 @@ Route::resource('groups', App\Http\Controllers\GroupController::class)->middlewa
 Route::resource('interventions', App\Http\Controllers\InterventionController::class)->middleware('auth');
 
 Route::get('/pdf1', [App\Http\Controllers\ReportController::class, 'generar1'])->name('pdf1')->middleware('auth');
+Route::get('/pdf2', [App\Http\Controllers\ReportController::class, 'generar2'])->name('pdf2')->middleware('auth');
+Route::get('/pdf3', [App\Http\Controllers\ReportController::class, 'generar3'])->name('pdf3')->middleware('auth');
 
 Auth::routes();
 

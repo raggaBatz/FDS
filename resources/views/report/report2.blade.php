@@ -7,7 +7,7 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <span id="card_title">
-                                <h1>Reporte - Intervenciones en el mes</h1>
+                                <h1>Reporte - Cantidad de intervenciones por grupo</h1>
                             </span>
                         </div>
                     </div>
@@ -17,26 +17,21 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-
-										<th>Centro</th>
 										<th>Grupo</th>
-                                        <th>Tipo de grupo</th>
-										<th>Fecha</th>
-										<th>Herramientas</th>
-
-
+										<th>Tipo de grupo</th>
+										<th>Cantidad</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($interventions as $intervention)
+                                    @foreach ($groups as $group)
                                         <tr>
-                                            <td>{{ $intervention->id }}</td>
+                                            <td>{{ $group->id }}</td>
 
-											<td>{{ $intervention->center->name }}</td>
-											<td>{{ $intervention->group->name }}</td>
-                                            <td>{{ $intervention->group->grouptype->name }}</td>
-											<td>{{ $intervention->intervention_date }}</td>
-											<td>{{ $intervention->tools }}</td>
+											<td>{{ $group->name }}</td>
+
+                                            <td>{{ $group->grouptype->name }}</td>
+
+                                            <td>{{ $group->interventions_count }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

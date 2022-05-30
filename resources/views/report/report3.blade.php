@@ -7,7 +7,7 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <span id="card_title">
-                                <h1>Reporte - Intervenciones en el mes</h1>
+                                <h1>Reporte - Cantidad de intervenciones por centro</h1>
                             </span>
                         </div>
                     </div>
@@ -17,26 +17,21 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-
 										<th>Centro</th>
-										<th>Grupo</th>
-                                        <th>Tipo de grupo</th>
-										<th>Fecha</th>
-										<th>Herramientas</th>
-
-
+                                        <th>Dirección</th>
+										<th>Cantidad</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($interventions as $intervention)
+                                    @foreach ($centers as $center)
                                         <tr>
-                                            <td>{{ $intervention->id }}</td>
+                                            <td>{{ $center->id }}</td>
 
-											<td>{{ $intervention->center->name }}</td>
-											<td>{{ $intervention->group->name }}</td>
-                                            <td>{{ $intervention->group->grouptype->name }}</td>
-											<td>{{ $intervention->intervention_date }}</td>
-											<td>{{ $intervention->tools }}</td>
+											<td>{{ $center->name }}</td>
+
+                                            <td>{{ $center->address }}</td>
+
+                                            <td>{{ $center->interventions_count }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
