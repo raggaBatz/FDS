@@ -47,17 +47,18 @@
                         </div>
                     @endif
 
-                    <div class="card-body">
+                    <div class="card-body"
+                    >
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-
+                                        {{-- <th>Tipo</th> --}}
 										<th>Centro</th>
 										<th>Grupo</th>
 										<th>Fecha</th>
-										<th>Herramientas</th>
+										{{-- <th>Herramientas</th> --}}
 
                                         <th></th>
                                     </tr>
@@ -66,11 +67,11 @@
                                     @foreach ($interventions as $intervention)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-
+                                            {{-- <td>{{ $intervention->center->centertype->name }}</td> --}}
 											<td>{{ $intervention->center->name }}</td>
 											<td>{{ $intervention->group->name }}</td>
 											<td>{{ $intervention->intervention_date }}</td>
-											<td>{{ $intervention->tools }}</td>
+											{{-- <td width="700px">{{ $intervention->tools }}</td> --}}
 
                                             <td>
                                                 <form action="{{ route('interventions.destroy',$intervention->id) }}" method="POST">

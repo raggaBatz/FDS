@@ -35,6 +35,7 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>ID Usuario</th>
+                                        <th>Nombre</th>
                                         <th>Email</th>
                                         <th>Nivel de acceso</th>
 										{{-- <th>ID Voluntario</th>
@@ -50,6 +51,7 @@
                                         <tr>
                                             {{-- <td>{{ ++$i }}</td> --}}
                                             <td>{{ $user->id }}</td>
+                                            <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
                                             <td>{{ $user->level }}</td>
                                             @if( !is_null($user->volunteer))

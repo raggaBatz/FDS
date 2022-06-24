@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $intervention->name ?? 'Show Intervention' }}
+    {{ $intervention->name ?? 'Detalle de intervención' }}
 @endsection
 
 @section('content')
@@ -10,31 +10,38 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="float-left">
-                            <span class="card-title">Show Intervention</span>
+                        <div class="col-sm-6">
+                            <div class="">
+                                <span class="card-title"><h2></h2></span>
+                            </div>
                         </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('interventions.index') }}"> Regresar</a>
+                        <div class="col-sm-6">
+                            <div class="">
+                                <a class="btn btn-primary" href="{{ route('interventions.index') }}"> Regresar</a>
+                            </div>
                         </div>
                     </div>
 
                     <div class="card-body">
 
                         <div class="form-group">
-                            <strong>Center Id:</strong>
-                            {{ $intervention->center_id }}
+                            <h3>Centro</h3>
+                            <h5>{{ $intervention->center->name }}</h5>
                         </div>
+                        <br/>
                         <div class="form-group">
-                            <strong>Group Id:</strong>
-                            {{ $intervention->group_id }}
+                            <h3>Grupo</h3>
+                            <h5>{{ $intervention->group->name }}</h5>
                         </div>
+                        <br/>
                         <div class="form-group">
-                            <strong>Intervention Date:</strong>
-                            {{ $intervention->intervention_date }}
+                            <h3>Fecha de la intervención</h3>
+                            <h5>{{ $intervention->intervention_date }}</h5>
                         </div>
+                        <br/>
                         <div class="form-group">
-                            <strong>Tools:</strong>
-                            {{ $intervention->tools }}
+                            <h3>Herramientas</h3>
+                            <h5>{{ $intervention->tools }}</h5>
                         </div>
 
                     </div>
