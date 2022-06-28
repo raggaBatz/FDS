@@ -24,6 +24,16 @@
             {{ Form::text('tools', $intervention->tools, ['class' => 'form-control' . ($errors->has('tools') ? ' is-invalid' : ''), 'placeholder' => 'Tools']) }}
             {!! $errors->first('tools', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+        <div class="form-group">
+            {{ Form::label('Detalle de actividades') }}
+            {{ Form::text('description', $intervention->description, ['class' => 'form-control' . ($errors->has('description') ? ' is-invalid' : ''), 'placeholder' => 'Description']) }}
+            {!! $errors->first('description', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('Areas de oportunidad') }}
+            {{ Form::text('opportunity_areas', $intervention->opportunity_areas, ['class' => 'form-control' . ($errors->has('opportunity_areas') ? ' is-invalid' : ''), 'placeholder' => 'Opportunity areas']) }}
+            {!! $errors->first('opportunity_areas', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
 
     </div>
     <div class="box-footer mt20">

@@ -18,7 +18,9 @@ return new class extends Migration
             $table->unsignedBigInteger('center_id')->nullable();
             $table->unsignedBigInteger('group_id')->nullable();
             $table->date('intervention_date');
-            $table->string('tools');
+            $table->longText('tools');
+            $table->longText('description');
+            $table->longText('opportunity_areas');
             $table->timestamps();
         });
     }

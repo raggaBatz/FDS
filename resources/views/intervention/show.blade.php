@@ -43,6 +43,16 @@
                             <h3>Herramientas</h3>
                             <h5>{{ $intervention->tools }}</h5>
                         </div>
+                        <br/>
+                        <div class="form-group">
+                            <h3>Descripción</h3>
+                            <h5>{{ $intervention->description }}</h5>
+                        </div>
+                        <br/>
+                        <div class="form-group">
+                            <h3>Areas de oportunidad</h3>
+                            <h5>{{ $intervention->opportunity_areas }}</h5>
+                        </div>
 
                     </div>
                 </div>

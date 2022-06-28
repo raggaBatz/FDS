@@ -12,6 +12,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property $group_id
  * @property $intervention_date
  * @property $tools
+ * @property $description
+ * @property $opportunity_areas
  * @property $created_at
  * @property $updated_at
  *
@@ -36,7 +38,7 @@ class Intervention extends Model
      *
      * @var array
      */
-    protected $fillable = ['center_id','group_id','intervention_date','tools'];
+    protected $fillable = ['center_id','group_id','intervention_date','tools','description','opportunity_areas'];
 
 
     /**

@@ -21,27 +21,27 @@
                         <li class="list-group-item list-group-item-primary">
                             <a class="nav-link" href="{{ route('pdf1') }}">{{ __('Reporte mensual de intervenciones ') }}</a>
                         </li>
-                        <li class="list-group-item list-group-item-secondary">
+                        <!-- <li class="list-group-item list-group-item-secondary">
                             <a class="nav-link" href="{{ route('pdf1') }}">{{ __('Reporte de voluntarios activos ') }}</a>
-                        </li>
+                        </li> -->
                         <li class="list-group-item list-group-item-success">
                             <a class="nav-link" href="{{ route('pdf2') }}">{{ __('Reporte mensual de intervenciones por grupo') }}</a>
                         </li>
-                        <li class="list-group-item list-group-item-danger">
+                        <!-- <li class="list-group-item list-group-item-danger">
                             <a class="nav-link" href="{{ route('pdf2') }}">{{ __('Reporte de centros sin intervención asignada') }}</a>
-                        </li>
+                        </li> -->
                         <li class="list-group-item list-group-item-warning">
                             <a class="nav-link" href="{{ route('pdf3') }}">{{ __('Reporte mensual de intervenciones por centro') }}</a>
                         </li>
-                        <li class="list-group-item list-group-item-info">
+                        <!-- <li class="list-group-item list-group-item-info">
                             <a class="nav-link" href="{{ route('pdf2') }}">{{ __('Reporte de actividades en intervención') }}</a>
-                        </li>
-                        <li class="list-group-item list-group-item-dark">
+                        </li> -->
+                        <!-- <li class="list-group-item list-group-item-dark">
                             <a class="nav-link" href="{{ route('pdf2') }}">{{ __('Reporte de capacitaciones') }}</a>
-                        </li>
-                        <li class="list-group-item list-group-item-primary">
+                        </li> -->
+                        <!-- <li class="list-group-item list-group-item-primary">
                             <a class="nav-link" href="{{ route('pdf2') }}">{{ __('Reporte de asistencia de voluntarios en intervenciones') }}</a>
-                        </li>
+                        </li> -->
                     </ul>
 
                 </div>
